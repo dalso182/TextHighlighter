@@ -10,7 +10,7 @@ color changes.
 })
 export class ColorPickerComponent implements OnInit {
 
-  @Input() colors; // receives a list of colors
+  @Input() colors = []; // receives a list of colors
   @Output() colorChange = new EventEmitter(); // triggered when the active color changes
   activeColor: string; // Current selected color
 

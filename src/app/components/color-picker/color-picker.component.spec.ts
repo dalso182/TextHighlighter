@@ -22,4 +22,9 @@ describe('ColorPickerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should be able to set a color', () => {
+    expect(component.activeColor).toBeFalsy();
+    component.setActiveColor('red');
+    expect(component.activeColor).toBeTruthy();
+  });
 });

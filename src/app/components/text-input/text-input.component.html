@@ -1,0 +1,13 @@
+<form class="example-form">
+  <p>
+    <mat-form-field class="example-full-width">
+      <textarea rows="6"  name="input" [(ngModel)]="textInput" matInput placeholder="Enter Text"></textarea>
+    </mat-form-field>
+  </p>
+  <div class="btns-row">
+    <button mat-raised-button (click)="setText('')">Reset Text</button>
+    <button mat-raised-button color="primary" (click)="setText(textInput)">Set Text For Highlighting</button>
+  </div>
+
+
+</form>

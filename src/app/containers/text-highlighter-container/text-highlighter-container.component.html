@@ -1,0 +1,20 @@
+
+<div class="box" elevation>
+  <h3>Enter the text and press "set text for highlighting" button to start highlighting </h3>
+  <app-text-input (textSet)="setTextToHighlight($event)"></app-text-input>
+</div>
+
+
+<div class="box" *ngIf="textToHighlight && textToHighlight.length > 1">
+  <h3>Pick a color a highlight the text: </h3>
+  <app-color-picker (colorChange)="setHighlightColor($event)" [colors]="availableColors"></app-color-picker>
+  <app-text-highlighter (highlighted)="storeWords($event, highlightColor)" [text]="textToHighlight" [color]="highlightColor"></app-text-highlighter>
+
+</div>
+<div class="box" *ngIf="showFilter">
+  <h3>Here you can see the highlighted words filter by color</h3>
+  <app-color-picker (colorChange)="setWordsFilterColor($event)" [colors]="availableColors"></app-color-picker>
+  <p>
+    <span *ngFor="let word of storedWordsByColor[wordsFilterActiveColor]">{{word}} </span>
+  </p>
+</div>

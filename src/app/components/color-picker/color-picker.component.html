@@ -1,0 +1,4 @@
+<ul class="color-list-buttons">
+  <li *ngFor="let color of colors" (click)="setActiveColor(color)"
+      [ngClass]="{active: activeColor === color}" [style.backgroundColor]="color"></li>
+</ul>
